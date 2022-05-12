@@ -48,12 +48,15 @@ main {
     width: 100%;
 }
 .btn-primary {
+    font-size: 18px;
     color: #fff;
     background: #67aba3;
     box-shadow: 0 3px #3c7c75;
     position: relative;
     top: -2px;
-    padding: 10px 20px;
+    padding: 15px 20px;
+    transition: 0.3s;
+    text-align: center;
 }
 .btn-primary:hover {
     box-shadow: 0 1px #0b453e;
@@ -61,16 +64,18 @@ main {
     top: 1px;
 }
 .btn-secondary {
+    font-size: 18px;
     color: #555;
-    background: #d0bea2;
+    background: #ffeac8;
     box-shadow: 0 3px #9a948a;
     position: relative;
     top: -2px;
-    padding: 10px 20px;
+    padding: 15px 20px;
+    transition: 0.3s;
 }
 .btn-secondary:hover {
-    box-shadow: 0 1px #555;
-    background: #d0bea2;
+    box-shadow: 0 1px #9a948a;
+    background: #ffeac8;
     top: 1px;
 }
 
@@ -79,6 +84,7 @@ main {
     font-family: 'Shippori Mincho', serif;
     font-size: 1.5rem;
     line-height: 1.5;
+    position: relative;
 }
 .title::after {
     content: '';
@@ -86,6 +92,10 @@ main {
     height: 5px;
     width: 10rem;
     background: #d0bea2;
+    background: -webkit-linear-gradient(to right, rgb(243, 213, 158), #faf4ce);
+    background: linear-gradient(to right, rgb(243, 213, 158), #faf4ce);
+    position: absolute;
+    left: calc(50% - 55px);
     margin: 2rem 0 2.5rem;
 }
 .title-center {
@@ -166,11 +176,27 @@ HOME
 .home-hero {
     width: 100%;
     background: url('../images/bg-hero.jpg') no-repeat center / cover;
-    padding: 5.5rem 1rem 3rem;
+}
+.home-hero h1 {
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 4rem;
+    color: #67aba3;
+    margin: 3;
+    padding: 1rem;
+    display: inline-block;
+}
+.home-hero h1::after {
+    content: "";
+    display: block;
+    height: 4px;
+    background: -webkit-linear-gradient(to right, rgb(103, 171, 163), #c9f8e0);
+    background: linear-gradient(to right, rgb(103, 171, 163), #c9f8e0);
 }
 .home-hero h2 {
+    text-align: center;
     font-family: 'Shippori Mincho', serif;
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: #fff;
     margin: 0;
     background: rgba(255, 255, 255, 0.70);
@@ -180,24 +206,30 @@ HOME
 
 /* Contents */
 .main-message {
-    display: flex;
-    background: url('../images/bg-message.jpg') no-repeat right center / 40vw auto;
     padding: 5.5rem 1rem 3rem;
 }
 .main-message h3 {
     font-family: 'Shippori Mincho', serif;
-    margin: 8vw 0 12vw;
     padding: 1rem;
 }
 .main-message p {
     font-size: 1.0rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
-
+.message-img {
+    display: inline-block;
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    margin: 8vw 0 12vw;
+    border-radius: 40% 70% 50% 30%/50%;
+}
+.women-img {
+    display: inline-block;
+}
 .brown-bg {
-    background: #f8f6f2;
+    background-color: #fffaee;
     display: flex;
-    background: url('../images/bg-women.jpg') no-repeat left center / 30vw auto;
     padding: 5.5rem 1rem 3rem;
 }
 .brown-bg h3 {
@@ -206,10 +238,14 @@ HOME
     margin-bottom: 60px;
 }
 .brown-bg p {
+    text-align: center;
     font-size: 1.0rem;
     margin-bottom: 2rem;
 }
+
 .content {
+    background-color: #fffaee;
+    display: flex;
     padding: 4rem 1rem;
 
 }
@@ -429,6 +465,14 @@ DESKTOP SIZE
     }
     .home-hero p {
         width: 38vw;
+    }
+    .main-message {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .message-img {
+        width: 440px;
+        height: 360px;
     }
 
     /* Contents */
