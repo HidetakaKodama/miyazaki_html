@@ -89,6 +89,7 @@ main {
 .title::after {
     content: '';
     display: block;
+    text-align: center;
     height: 5px;
     width: 10rem;
     background: #d0bea2;
@@ -100,9 +101,11 @@ main {
 }
 .title-center {
     text-align: center;
+    margin: 2rem 0 2.5rem;
 }
 .title-center::after {
-    margin: 2.5rem auto;
+    text-align: center;
+    margin: 1rem auto;
 }
 
 /* Table */
@@ -174,7 +177,7 @@ header .wrapper {
 HOME
 ================================================ */
 .home-hero {
-    width: 100%;
+    padding: 5.5rem 1rem 3rem;
     background: url('../images/bg-hero.jpg') no-repeat center / cover;
 }
 .home-hero h1 {
@@ -206,6 +209,7 @@ HOME
 
 /* Contents */
 .main-message {
+    display: flex;
     padding: 5.5rem 1rem 3rem;
 }
 .main-message h3 {
@@ -488,6 +492,9 @@ DESKTOP SIZE
     .home-text {
         width: 50vw;
         margin-bottom: 0;
+    }
+    .women-img {
+        width: 34vw;
     }
 
 /* Timeline */
