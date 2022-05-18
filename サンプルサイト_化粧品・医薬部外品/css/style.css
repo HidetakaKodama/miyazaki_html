@@ -1,0 +1,250 @@
+@charset 'UTF-8';
+/*
+GENERAL STYLING
+===========================================*/
+html {
+    font-size: 100%;
+}
+body {
+    color: #555;
+    font-family: 'Shippori Mincho', serif;
+}
+/*
+COMMON
+===========================================*/
+
+/*
+HEADER
+===========================================*/
+
+/*
+HOME
+===========================================*/
+/* スマホ閲覧時のハンバーガーメニュー　*/
+
+#hanburger {
+    display: none; /*チェックボックスを非表示 */
+}
+
+.menu_button {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    top: 20px;
+    background: #a6e2de;
+    z-index: 10;
+}
+
+.menu_button::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f0c9";
+    font-weight: 900;
+    position: absolute;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#hanburger:checked + .menu_button::before {
+    content: "\f00d";
+}
+
+.global_menu {
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 30px;
+    color: #333;
+    background: #ffc0cb;
+    overflow-y: scroll;
+    text-align: center;
+}
+
+#hanburger:checked ~ .global_menu {
+    visibility: visible;
+}
+
+.global_menu a {
+    display: block;
+    width: 100%;
+}
+
+.global_menu a:hover {
+    background: #ffb6c1;
+}
+
+.menu:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.menu > a {
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.child_menu > li > a {
+    padding: 10px 30px;
+    font-size: 0.8em;
+}
+
+/*
+HOME
+================================================*/
+/* 写真が入れ替わるキービジュアル　*/
+.slider {
+    position:absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    background-color: #000;
+}
+
+.slider .imege {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.slider .image:nth-of-type(1) {
+    background-image: url('../images/home-eye.jpg');
+}
+.slider .image:nth-of-type(2) {
+    animation-delay: 4s;
+    background-image: url('../images/home-blush.jpg');
+}
+.slider .image:nth-of-type(3) {
+    animation-delay: 8s;
+    background-image: url('../images/home-toner.jpg');
+}
+.slider .image:nth-of-type(4) {
+    animation-delay: 12s;
+    background-image: url('../images/home-lip.jpg');
+}
+
+.slider .image {
+    animation-name: anime;
+    animation-delay: 0;
+    animation-iteration-count: infinite;
+    animation-duration: 16s;
+}
+
+/*　アニメーション定義　*/
+@keyframes anime {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.18);
+    }
+}
+
+/*
+FOOTER
+================================================ */
+footer {
+    background: #ffb6c1;
+    color: rgba(255, 255, 255, 0.978);
+    padding: 2.5rem 1rem;
+    text-align: center;
+}
+.footer-nav li {
+    margin: 1rem 0;
+}
+.footer-nav a {
+    color: #ffffff;
+}
+
+/*
+DESKTOP SIZE
+========================================*/
+@media screen and (min-width: 481px) {
+
+.menu_button {
+    display: none;
+}
+.global_menu {
+    position: relative;
+    padding: 0;
+    color: #fff;
+    background: #e6a3ad;
+    visibility: visible;
+    overflow-y: visible;
+}
+.menu, .child_menu > li {
+    display: inline-block;
+}
+.menu:not(:last-child) {
+    margin-bottom: 0;
+}
+.menu > a {
+    font-weight: normal;
+    padding: 10px 20px;
+}
+.menu:hover > a {
+    background: #ffb6c1;
+}
+
+.child_menu { /*　下層メニューのスタイル　*/
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 30px;
+    color: #333;
+    background: #ffb6c1;
+    visibility: hidden;
+    opacity: 0;
+    transition: 1s top, 1s opacity;
+}
+.menu:hover .child_menu {
+    top: 100%;
+    opacity: 1;
+    visibility: visible;
+}
+.child_menu > li > a {
+    padding: 10px 30px;
+}
+.child_menu > li > a:hover {
+    background: unset;
+    color: #fff;
+}
+
+/* Footer */
+.footer-nav {
+    display: flex;
+    justify-content: center;
+}
+.footer-nav li {
+    margin: 0 .75rem;
+}
+.footer-nav a:hover {
+    color: #fff;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
