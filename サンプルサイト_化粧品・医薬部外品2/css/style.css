@@ -597,6 +597,7 @@ ul.list-row1, ul.list-row2, ul.list-row3, ul.list-row4, ul.list-row5 {
   color: #67aba3;
   font-size: 14px;
   padding: auto;
+  margin-bottom: 1.5rem;
 }
 .look-more a:hover,
   .look-more .current {
