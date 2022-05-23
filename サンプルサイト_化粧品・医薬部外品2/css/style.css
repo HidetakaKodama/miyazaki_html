@@ -365,7 +365,7 @@ btns
 .key h2{ 
     color: #7f8c8d; 
     font-family: 'Roboto Slab', serif;
-    font-size:18px; 
+    font-size:14px; 
     margin-bottom:20px;
 } 
 
@@ -384,8 +384,10 @@ body {
 .common_block {
   margin: 20px 45px 45px;
 }
-.line-title {
-  border-bottom: 3px solid #a0d8ca;
+.line-title1 {
+  border-bottom: 3.5px solid;
+  border-image: linear-gradient(to right, #67aba3 0%, #deeb95 100%);
+  border-image-slice: 1;
   padding-bottom: 8px;
   margin-bottom: 30px;
   margin-top: 50px;
@@ -393,16 +395,24 @@ body {
   font-size: 1.5rem;
   font-weight: bold;
 }
-.line_title .tx01 {
+.line_title1 .tx01 {
   font-size: 2.3rem;
   font-weight: 500;
   margin-right: 20px;
   display: inline-block;
 }
-.attention-list p {
-  margin: auto;
-  padding: 0 18px;
-  margin-bottom: 50px;
+.attention-list {
+  display: flex;
+}
+.attention-list .topic-img {
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    display: flex;
+  }
+.attention-list h3 {
+  padding-right: 20px;
+  margin-bottom: 10px;
 }
 .attention-list ul {
   display: flex;
@@ -414,17 +424,38 @@ body {
   margin-inline-end: 0px;
   padding-inline-start: 40px;
 }
-.nav-menu a::before {
+.nav-menu a {
+  color: #67aba3;
+}
+.nav-menu a:hover {
+  color: #43877f;
   display: block;
   margin-bottom: .25rem;
 /* Font Awesome */
   font-family: 'Font Awesome 5 Pro';
   font-weight: 900;
   color: #a0d8ca;
-  font-size: 1.25rem;
+  font-size: 1rem;
+}
+/*========================================*/
+.line-title2 {
+  border-bottom: 3.5px solid;
+  border-image: linear-gradient(to right, #67aba3 0%, #deeb95 100%);
+  border-image-slice: 1;
+  padding-bottom: 8px;
+  margin-bottom: 30px;
+  line-height: 1;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.line_title2 .tx01 {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 500;
+  display: inline-block;
 }
 
-/* スライドする要素============================= */
+/* ホバーストップするスライド要素============================= */
 .content {
   width: 300px;
   height: 300px;
@@ -504,6 +535,15 @@ body {
 }
 
 /* アイテムリスト======================================*/
+/* アイテムリストのホバーエフェクト */
+.img-wrap img {
+  opacity: 1;
+  transition: .3s ease-in-out;
+}
+.img-wrap img:hover {
+  opacity: .5;
+}
+
 ul.list-row1, ul.list-row2, ul.list-row3, ul.list-row4, ul.list-row5 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -552,6 +592,23 @@ ul.list-row1, ul.list-row2, ul.list-row3, ul.list-row4, ul.list-row5 {
   ul.list-row1.gutter li, ul.list-row2.gutter li, ul.list-row3.gutter li, ul.list-row4.gutter li, ul.list-row5.gutter li{
     padding: 0 20px;
     }
+.look-more {
+  text-align: center;
+  color: #67aba3;
+  font-size: 14px;
+  padding: auto;
+}
+.look-more a:hover,
+  .look-more .current {
+      color: #43877f;
+      border-bottom: 2px solid #67aba3;
+      padding-bottom: 0;
+      background: none;
+}
+.look-more a::before {
+      margin: 0;
+      content: '';
+}
 
 /* 背景を固定する======================================*/
 .scroll {
@@ -578,6 +635,25 @@ ul.list-row1, ul.list-row2, ul.list-row3, ul.list-row4, ul.list-row5 {
       color: #a0d8ca;
       padding: auto;
       font-size: 3rem;
+      margin-bottom: 1rem;
+  }
+  .scroll p {
+    text-align: center;
+    color: #666;
+    padding: 14px 5rem;
+    font-size: 14px;
+  }
+  .scroll a {
+    color: #67aba3;
+  }
+  .scroll a:hover {
+    color: #43877f;
+    display: block;
+  /* Font Awesome */
+    font-family: 'Font Awesome 5 Pro';
+    font-weight: 900;
+    color: #a0d8ca;
+    font-size: 1rem;
   }
 
   /*スクロールするコンテンツ*/
@@ -593,7 +669,9 @@ ul.list-row1, ul.list-row2, ul.list-row3, ul.list-row4, ul.list-row5 {
 FOOTER
 ================================================ */
 footer {
-    background: #9bd2c5;
+    background-image: -webkit-gradient(linear, left top, right top, from(#67aba3), to(#deeb95));
+    background-image: -webkit-linear-gradient(left, #67aba3 0%, #deeb95 100%);
+    background-image: linear-gradient(to right, #67aba3 0%, #deeb95 100%);
     color: rgba(255, 255, 255, 0.978);
     padding: 2.5rem 1rem;
     text-align: center;
@@ -646,7 +724,9 @@ DESKTOP SIZE
     position: relative;
     padding: 0;
     color: #fff;
-    background: #a0d8ca;
+    background-image: -webkit-gradient(linear, left top, right top, from(#67aba3), to(#deeb95));
+    background-image: -webkit-linear-gradient(left, #67aba3 0%, #deeb95 100%);
+    background-image: linear-gradient(to right, #67aba3 0%, #deeb95 100%);
     visibility: visible;
     overflow-y: visible;
 }
@@ -694,13 +774,29 @@ DESKTOP SIZE
 }
 
 /* トピックス================================ */
+.common_block {
+  margin: 3rem o 5rem;
+}
+.attention-list  {
+  text-align: center;
+  margin: 0 40px;
+}
+.attention-list ul {
+  display: flex;
+}
+.nav-menu a {
+  color: #67aba3;
+  transition: 0.3s;
+}
 .nav-menu a:hover,
   .nav-menu .current {
+      color: #43877f;
       border-bottom: 2px solid #67aba3;
       padding-bottom: 0;
       background: none;
   }
   .nav-menu a::before {
+      margin: 0;
       content: '';
   }
 
